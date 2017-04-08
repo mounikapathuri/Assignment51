@@ -1,0 +1,76 @@
+package Assignment51;
+import java.util.Scanner;
+
+public class Assignment51 {
+
+	public static void main(String[] args) {
+		circle c=new circle();
+		c.findArea();
+		c.findPerimeter();
+		rectangle r=new rectangle();
+		r.findArea();
+		r.findPerimeter();
+		triangle t=new triangle();
+		t.findArea();
+		t.findPerimeter();
+	}
+}
+abstract class figure{
+	Scanner sc=new Scanner(System.in);
+	double dim1;
+	double dim2;
+	double dim3;
+	double result;
+	abstract void findArea();
+	abstract void findPerimeter();
+}
+class circle extends figure{
+	
+	void findArea(){
+		System.out.println("Enter the radius of circle");
+		dim1=sc.nextDouble();
+		result=3.14*dim1*dim1;
+		System.out.println(" "+result);
+	}
+	void findPerimeter(){
+		System.out.println("Enter the radius of circle");
+		dim1=sc.nextDouble();
+		result=3.14*dim1*2;
+		System.out.println(" "+result);
+	}
+}
+class rectangle extends figure{
+	
+	void findArea(){
+		System.out.println("Enter the dimensions of rectangle");
+		dim1=sc.nextDouble();
+		dim2=sc.nextDouble();
+		result=dim1*dim2;
+		System.out.println(" "+result);
+	}
+	void findPerimeter(){
+		System.out.println("Enter the dimensions of rectangle");
+		dim1=sc.nextDouble();
+		dim2=sc.nextDouble();
+		result=2*(dim1+dim2);
+		System.out.println(" "+result);
+	}
+}
+class triangle extends figure{
+	void findArea(){
+		System.out.println("Enter the dimensions of triangle");
+		dim1=sc.nextDouble();
+		dim2=sc.nextDouble();
+		result=0.5*(dim1*dim2);
+		System.out.println(" "+result);
+	}
+	void findPerimeter(){
+		System.out.println("Enter the dimensions of triangle");
+		dim1=sc.nextDouble();
+		dim2=sc.nextDouble();
+		dim3=sc.nextDouble();
+		result=dim1+dim2+dim3;
+		System.out.println(" "+result);
+	}
+}
+
